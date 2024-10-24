@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useAlert, useAccount } from "@gear-js/react-hooks";
 import { useSailsCalls } from "@/app/hooks";
 import './GetReports.css';
@@ -27,6 +27,14 @@ const GetReports: React.FC = () => {
     const [reports, setReports] = useState<ReportData[]>([]);
     const [loading, setLoading] = useState(false);
 
+    const decodeBase64 = (data: string) => {
+        try {
+            return atob(data);
+        } catch (error) {
+            return data;
+        }
+    };
+
     const handleGetReports = async () => {
         if (!accounts || !sails) {
             alert.error('Accounts or Sails are not ready');
@@ -35,8 +43,8 @@ const GetReports: React.FC = () => {
         
         setLoading(true);
         try {
-            // Llamada a la consulta de todos los reportes sin pasar `userAddress`
-            const response = await sails.command('ReportService.GetAllReports', {});
+            // Cambiar 'command' por 'query' ya que estamos realizando una consulta
+            const response = await sails.query('ReportService/GetAllReports', {});
 
             setReports(response);
             alert.success('Reports fetched successfully!');
@@ -47,10 +55,6 @@ const GetReports: React.FC = () => {
         }
     };
 
-    useEffect(() => {
-        handleGetReports();
-    }, []); // Dependencias vacías para ejecutar solo al montar el componente
-
     return (
         <div className="container">
             <h2>Get Reports</h2>
@@ -60,13 +64,15 @@ const GetReports: React.FC = () => {
                 <ul>
                     {reports.map((report) => (
                         <li key={report.report_id}>
+                            <p>ID: {report.report_id}</p>
                             <h3>{report.description}</h3>
-                            <p>Report ID: {report.report_id}</p>
-                            <p>Reported by: {report.person_report.firstname_denuncied} {report.person_report.lastname_denuncied}</p>
+                            {/* <p>Reported by: {decodeBase64(report.person_report.firstname_denuncied)} {decodeBase64(report.person_report.lastname_denuncied)}</p> */}
                             <p>Details: {report.details}</p>
-                            <p>Category: {report.category}</p>
-                            <p>Public: {report.is_public ? 'Yes' : 'No'}</p>
-                            <p>Other: {report.otro}</p>
+                            {/* <p>Category: {report.category}</p> */}
+                            {/* {report.person_report.img_denuncied && (
+                                <img src={report.person_report.img_denuncied} alt="Denounced Image" />
+                            )} */}
+                            {/* <p>Other: {report.otro ? report.otro : 'No data'}</p> */}
                         </li>
                     ))}
                 </ul>
