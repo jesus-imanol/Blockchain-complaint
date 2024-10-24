@@ -1,0 +1,25 @@
+
+.report {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100vh;
+     background-image: radial-gradient(circle at 100% 0%, #cbffb9 0, #b7ffbc 12.5%, #9dffbc 25%, #7affba 37.5%, #46f9b5 50%, #00ebb2 62.5%, #00e0b3 75%, #00d9b8 87.5%, #00d5c1 100%);
+}
+.distro {
+    width: 33%;
+    height: 100%;
+    display: flex;
+}
+.form_create {
+    width: 80%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+input {
+    width: 400px;
+    height: 48px;
+}
