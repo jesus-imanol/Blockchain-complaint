@@ -1,4 +1,4 @@
-# Traffic light contract
+# Report contract
 
 To compile the contract yo need yo enter in 'wasm' and then put:
 
