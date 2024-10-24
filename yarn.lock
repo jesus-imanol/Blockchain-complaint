@@ -6229,7 +6229,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/crypto-js@npm:^4":
+"@types/crypto-js@npm:4.2.2":
   version: 4.2.2
   resolution: "@types/crypto-js@npm:4.2.2"
   checksum: 760a2078f36f2a3a1089ef367b0d13229876adcf4bcd6e8824d00d9e9bfad8118dc7e6a3cc66322b083535e12be3a29044ccdc9603bfb12519ff61551a3322c6
@@ -11725,7 +11725,7 @@ __metadata:
     "@radix-ui/react-scroll-area": "npm:1.0.4"
     "@radix-ui/react-select": "npm:1.2.2"
     "@tanstack/react-table": "npm:8.9.3"
-    "@types/crypto-js": "npm:^4"
+    "@types/crypto-js": "npm:4.2.2"
     "@types/node": "npm:18.16.19"
     "@types/react": "npm:18.2.33"
     "@types/react-dom": "npm:18.2.14"

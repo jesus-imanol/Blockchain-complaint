@@ -1,64 +1,73 @@
 .container {
-    display: flex;
-    flex-direction: row;
-    padding: 2%;
-    height: 80vh; /* Occupies 80% of the viewport height */
-    width: 100%;
-    background-image: radial-gradient(circle at 100% 0%, #cbffb9 0, #b7ffbc 12.5%, #9dffbc 25%, #7affba 37.5%, #46f9b5 50%, #00ebb2 62.5%, #00e0b3 75%, #00d9b8 87.5%, #00d5c1 100%);
-  }
-  
-  .form {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 600px; /* Maximum width for the form */
-    padding: 20px; /* Space inside the form *
-    border-radius: 8px; /* Rounded corners */
-    /* White background for the form */
-  }
-  
-  .form h2 {
-    margin-bottom: 20px;
-    font-size: 36px;
-    /* Space below the heading */
-    text-align: center; /* Centered text */
-  }
-  h2 {
-    font-size: 60px;
-    font-weight: bold;
-    color: #222424;
-    margin-bottom: 16px;
-    text-align: center;
-  }
-  img {
-    width: 400px;
-    height: 400px;
-    /* Remove extra space below the image */
-  }
-  
-  .input {
-    margin-bottom: 10px;
-    padding: 10px; 
-    border: 1px solid #ccc; 
-    border-radius: 4px; 
-    background-color: #000000;
-    color: #ffffff;
-  }
-  .input::placeholder {
-    color: #ffffff;
-  }
-  
-  .button {
-    padding: 10px; /* Padding inside the button */
-    background-color: #000000; /* Green background */
-    color: white; /* White text color */
-    border: none; /* No border */
-    border-radius: 4px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s; /* Smooth transition for hover effect */
-  }
-  
-  .button:hover {
-    background-color: #232323; /* Darker green on hover */
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 28px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 900px; /* Increased width to accommodate both columns */
+  margin: 0 auto;
+  text-align: center;
+  gap: 40px;
+}
+
+.form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px; /* Space between form and image */
+}
+
+p {
+  font-size: 18px;
+  margin-top: 12px;
+}
+
+.titulo {
+  font-size: 30px;
+}
+
+.descripcion {
+  padding-bottom: 30px;
+  margin-top: 10px;
+}
+
+.input {
+  margin-bottom: 18px;
+  padding: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 18px;
+  background-color: #f9f9f9;
+  height: 50px;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.button {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+img {
+  flex: 1;
+  max-width: 100%; /* Makes sure image scales */
+  height: auto;
+  align-self: center;
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+  margin-top: 60px;
+}

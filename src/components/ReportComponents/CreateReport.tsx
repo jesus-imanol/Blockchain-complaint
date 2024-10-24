@@ -3,6 +3,7 @@ import { useAlert, useAccount } from "@gear-js/react-hooks";
 import { useSailsCalls } from "@/app/hooks";
 import { web3FromSource } from "@polkadot/extension-dapp";
 import './CreateReport.css';
+import cryptojs from 'crypto-js';
 
 function CreateReport() {
     const [ubicacion, setUbicacion] = useState<string>('');
@@ -61,12 +62,13 @@ function CreateReport() {
         
         // Define personReport
         const personReport: PersonReport = {
-            firstname_denuncied: firstnameDenuncied,
-            lastname_denuncied: lastnameDenuncied,
+            firstname_denuncied: cryptojs.AES.encrypt(firstnameDenuncied, "awe").toString(), // Puedes cambiar esto según tus necesidades
+            lastname_denuncied: cryptojs.AES.encrypt(lastnameDenuncied, "awe").toString(),
             img_denuncied: imgDenuncied,
-            description_denuncied: descripcion,
+            description_denuncied: cryptojs.AES.encrypt(descripcion, "awe").toString(),
             age_denuncied: ageDenuncied !== null ? ageDenuncied : 0, // Usa 0 si es null
         };
+        console.log('personReport:', personReport); // Agrega esta línea para verificar el contenido de personReport
     
         let report_id = Math.floor(Math.random() * 10000); 
         let index = 0; 
@@ -133,7 +135,8 @@ function CreateReport() {
                         categoria,
                         null, // "otro" (si hay otro campo, reemplazar null por el valor correcto)
                         emprises
-                    ], 
+                    ],
+                    
                     callbacks: {
                         onLoad: () => alert.info('Preparing to send report data...'),
                         onBlock: (blockHash) => alert.success(`Transaction included in block: ${blockHash}`),
@@ -241,7 +244,7 @@ function CreateReport() {
                                 />
                             </div>
 
-                            <button type="submit">Enviar</button>
+                            <button type="submit">Enviar datos</button>
                         </form>
                     </div>
                 </div>

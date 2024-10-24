@@ -89,15 +89,12 @@ const CreateEnterprise: React.FC = () => {
             enterpriseData.hour,
             enterpriseData.name_owner,
         
-          ],  // Asegúrate de que enterpriseData sea un objeto válido
+          ],  
           callbacks: {
             onLoad: () => alert.info('Preparing to send enterprise data...'),
             onBlock: (blockHash) => alert.success(`Transaction included in block: ${blockHash}`),
             onSuccess: () => alert.success('Enterprise registered successfully!'),
             onError: () => {
-              // Manejo de errores
-             /* const errorMessage = erro|| 'An unknown error occurred';
-              console.error('Detailed Error:'); // Log detallado del error */
               alert.error(`Error while registering enterprise`);
             },
           }
@@ -112,52 +109,61 @@ const CreateEnterprise: React.FC = () => {
   
   return (
     <div className="container">
-      <form className="form">
-        <h2>Create Enterprise</h2>
-        <input
-          type="text"
-          placeholder="Name of Enterprise"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          className="input"
-        />
-        <input
-          type="text"
-          placeholder="Location of Enterprise"
-          value={location}
-          onChange={(e) => setLocation(e.target.value)}
-          className="input"
-        />
-        <input
-          type="text"
-          placeholder="Name of Owner"
-          value={ownerName}
-          onChange={(e) => setOwnerName(e.target.value)}
-          className="input"
-        />
-        <input
-          type="text"
-          placeholder="Postal Code"
-          value={postalCode}
-          onChange={(e) => setPostalCode(e.target.value)}
-          className="input"
-        />
-        <input
-          type="text"
-          placeholder="Working Hours (e.g., 09:00-17:00)"
-          value={hour}
-          onChange={(e) => setHour(e.target.value)}
-          className="input"
-        />
-        <button 
-          type="button" 
-          onClick={handleCreateEnterprise} 
-          className="button">
-          Submit
-        </button>
-      </form>
-      <h2>YOUR ENTERPRISE WITHOUT CORRUPTION</h2>
-    </div>
+  <div className="form-column">
+    <form className="form">
+      <strong>
+        <p className="titulo">Registrar empresa</p>
+      </strong>
+      <p className="descripcion">Ingrese los datos de la empresa para registrarlo en el sistema.</p>
+      <input
+        type="text"
+        placeholder="Name of Enterprise"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        className="input"
+      />
+      <input
+        type="text"
+        placeholder="Location of Enterprise"
+        value={location}
+        onChange={(e) => setLocation(e.target.value)}
+        className="input"
+      />
+      <input
+        type="text"
+        placeholder="Name of Owner"
+        value={ownerName}
+        onChange={(e) => setOwnerName(e.target.value)}
+        className="input"
+      />
+      <input
+        type="text"
+        placeholder="Postal Code"
+        value={postalCode}
+        onChange={(e) => setPostalCode(e.target.value)}
+        className="input"
+      />
+      <input
+        type="text"
+        placeholder="Working Hours (e.g., 09:00-17:00)"
+        value={hour}
+        onChange={(e) => setHour(e.target.value)}
+        className="input"
+      />
+      <button 
+        type="button" 
+        onClick={handleCreateEnterprise} 
+        className="button">
+        Submit
+      </button>
+    </form>
+  </div>
+  <div className="image-column">
+    <img src="/edificio.png" alt="Edificio" className="image" />
+  </div>
+</div>
+
+    
   );
 }
 

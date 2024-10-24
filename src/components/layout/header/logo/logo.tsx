@@ -4,7 +4,7 @@ import './logo.module.scss';
 function Logo() {
   return (
     <Link to="/">
-      <img src="/vara.svg" alt="LOGO" />
+      <img src="/vara.svg" alt="LOGO"  />
     </Link>
   );
 }

@@ -1,25 +1,83 @@
-
 .report {
     display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 100vh;
-     background-image: radial-gradient(circle at 100% 0%, #cbffb9 0, #b7ffbc 12.5%, #9dffbc 25%, #7affba 37.5%, #46f9b5 50%, #00ebb2 62.5%, #00e0b3 75%, #00d9b8 87.5%, #00d5c1 100%);
-}
-.distro {
-    width: 33%;
-    height: 100%;
-    display: flex;
-}
-.form_create {
-    width: 80%;
-    height: 60%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-}
-input {
-    width: 400px;
-    height: 48px;
-}
+    align-items: flex-start; /* Ajuste para que no se centre verticalmente */
+    padding: 20px;
+    height: 100vh; /* Hace que el contenedor ocupe toda la pantalla */
+    overflow-y: auto; /* Permite desplazarse si el contenido es más alto */
+  }
+  
+  .distro {
+    flex: 1;
+  }
+  
+  .form_create {
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 600px; /* Un poco más ancho para dos columnas */
+    width: 100%;
+    border-radius: 8px;
+    margin: 20px;
+    position: relative; /* Importante para que el botón esté siempre visible */
+  }
+  
+  h2 {
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  h3, h4 {
+    font-family: Arial, sans-serif;
+    color: #555;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"],
+  input[type="number"],
+  select {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+  
+  input[type="text"]:focus,
+  input[type="number"]:focus,
+  select:focus {
+    border-color: #888;
+    outline: none;
+  }
+  
+  /* Estilos para las dos columnas de datos de la persona denunciada */
+  .person_data {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Divide en dos columnas iguales */
+    gap: 10px; /* Espacio entre las columnas */
+  }
+  
+  button {
+    background-color: #808080; 
+    color: black;
+    padding: 10px 0;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 15px;
+    position: sticky;
+    bottom: 0;
+    font-size: 20px;
+  }
+  
+  .form_create div {
+    margin-bottom: 10px;
+  }
+  
