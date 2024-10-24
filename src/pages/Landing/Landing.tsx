@@ -2,6 +2,7 @@ import { Center, VStack } from "@chakra-ui/react";
 import { Button } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { CreateEnterprise } from "@/components/EnterpriseComponents"
+import { GetReports } from "@/components/ReportComponents/GetReports/GetReports";
 function Landing() {
   return (
     <>
@@ -10,6 +11,7 @@ function Landing() {
       </VStack>  
     </Center>
     <CreateEnterprise />
+    <GetReports />
     </>
      
   );
