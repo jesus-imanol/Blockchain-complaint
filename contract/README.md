@@ -16,9 +16,9 @@ This contract contains the signless and walletless feature, it use the keyring s
 
 ### Services
 
-- TrafficLightService:
+- ReportService:
 
-    This service contains the logic to implement a traffic light.
+    This service contains the logic to implement a report.
 
 - KeyringService:
 
