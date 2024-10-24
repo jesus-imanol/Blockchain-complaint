@@ -1,60 +1,79 @@
-/* Container for the whole report list */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-}
-
-/* Style for the cards container */
-.cards-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid layout */
-    gap: 20px; /* Space between the cards */
-}
-
-/* Card styles with dark grey body */
-.card {
-    background-color: #4a4a4a; /* Dark grey background */
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    transition: transform 0.3s ease, background-color 0.3s ease;
     display: flex;
     flex-direction: column;
+    height: 100vh;
 }
 
-/* Card hover effect with lighter grey */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+    gap: 20px;
+    overflow-y: auto;
+    padding: 10px;
+    max-height: 80vh;
+    scrollbar-width: thin;
+    scrollbar-color: #888 #333;
+}
+
+.cards-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.cards-container::-webkit-scrollbar-track {
+    background: #333;
+}
+
+.cards-container::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+    border: 2px solid #333;
+}
+
+.card {
+    background-color: #383838;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    transition: transform 0.4s ease, background-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 10px;
+}
+
 .card:hover {
-    transform: translateY(-5px);
-    background-color: #5c5c5c; /* Slightly lighter grey on hover */
+    transform: translateY(-8px) scale(1.02);
+    background-color: #444;
 }
 
-/* Card content */
 .card-content {
     padding: 20px;
-    color: #f0f0f0; /* Light grey text color for contrast */
+    color: #f8f8f8;
+    font-family: 'Arial', sans-serif;
 }
 
-/* Image styling */
 .report-image {
     width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-top: 15px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px 12px 0 0;
 }
 
-/* Button style */
 .button {
-    background-color: #333; /* Dark grey button */
-    color: white;
+    background-color: #3a3a3a;
+    color: #fff;
     border: none;
-    padding: 10px 20px;
-    margin-top: 20px;
+    padding: 12px 25px;
+    margin: 10px 20px 0 20px;
     cursor: pointer;
-    border-radius: 4px;
+    border-radius: 5px;
+    font-weight: bold;
     transition: background-color 0.3s ease;
 }
 
 .button:hover {
-    background-color: #555; /* Slightly lighter grey on hover */
+    background-color: #666;
 }

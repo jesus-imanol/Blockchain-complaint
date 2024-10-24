@@ -43,12 +43,12 @@ const GetReports: React.FC = () => {
         
         setLoading(true);
         try {
-            // Cambiar 'command' por 'query' ya que estamos realizando una consulta
             const response = await sails.query('ReportService/GetAllReports', {});
 
             setReports(response);
             alert.success('Reports fetched successfully!');
         } catch (error: any) {
+            
             alert.error("Error while fetching reports:");
         } finally {
             setLoading(false);
@@ -58,6 +58,7 @@ const GetReports: React.FC = () => {
     return (
         <div className="container">
             <h2>Get Reports</h2>
+            <button onClick={handleGetReports} className="button">Refresh Reports</button>
             {loading ? (
                 <p>Loading reports...</p>
             ) : (
@@ -79,7 +80,7 @@ const GetReports: React.FC = () => {
                     ))}
                 </div>
             )}
-            <button onClick={handleGetReports} className="button">Refresh Reports</button>
+
         </div>
     );
     
