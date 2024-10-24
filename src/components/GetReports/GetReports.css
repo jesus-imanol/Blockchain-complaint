@@ -1,0 +1,60 @@
+/* Container for the whole report list */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Style for the cards container */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid layout */
+    gap: 20px; /* Space between the cards */
+}
+
+/* Card styles with dark grey body */
+.card {
+    background-color: #4a4a4a; /* Dark grey background */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Card hover effect with lighter grey */
+.card:hover {
+    transform: translateY(-5px);
+    background-color: #5c5c5c; /* Slightly lighter grey on hover */
+}
+
+/* Card content */
+.card-content {
+    padding: 20px;
+    color: #f0f0f0; /* Light grey text color for contrast */
+}
+
+/* Image styling */
+.report-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+/* Button style */
+.button {
+    background-color: #333; /* Dark grey button */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #555; /* Slightly lighter grey on hover */
+}
